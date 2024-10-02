@@ -1,0 +1,47 @@
+<!-- <!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "css/mystyles.css" %}">
+    <title>First App</title>
+</head>
+<body>
+    <h1>Image loader, Here is the image of the Tiger !!!</h1>
+    <img src="{% static "images/hello.jpg" %}" alt="Opps image failed to load" width="1000" height="650">
+</body>
+</html> -->
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django level two</title>
+    <link rel="stylesheet" href="{% static 'css/mystyles.css' %}"/>
+</head>
+<body>
+    <h1>Hi welcome to Django level two!</h1>
+    <h2>Here are the access records</h2>
+
+    <div class="djangotwo">
+        {% if access_records %}
+         <table>
+            <thead>
+                <th>Site Name</th>
+                <th>Date Accessed</th>
+            </thead>
+            {% for acc in access_records %}
+            <tr>
+                <td>{{ acc.name }}</td>
+                <td>{{ acc.date }}</td>
+            </tr>
+            {% endfor %}
+         </table>
+         {% else %}
+          <p>OPPS! NO ACCESS RECORDS!!</p>
+        {% endif %}
+    </div>
+</body>
+</html>
